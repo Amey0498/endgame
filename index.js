@@ -1,11 +1,12 @@
 var readLineSync = require("readline-sync");
+const chalk = require('chalk');
 
 var score = 0;
 var userName = readLineSync.question("What's your name? ");
 
 var welcomeMessage = "Welcome " + userName + " to 'Do you know Amey?'";
 
-console.log(welcomeMessage);
+console.log(chalk.bgRed.bold(welcomeMessage));
 
 //play function
 function play(question, answer){
