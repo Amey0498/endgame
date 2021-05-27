@@ -12,13 +12,13 @@ console.log(chalk.white.bgBlue.bold(welcomeMessage));
 function play(question, answer){
   var userAnswer = readLineSync.question(question);
   if(userAnswer.toUpperCase() === answer.toUpperCase()){
-    console.log("Right");
+    console.log(chalk.bold.bgBlue.green("Right!"));
     score++;
   } else{
-    console.log("Wrong");
+    console.log(chalk.bold.bgBlue.redBright("Wrong!"));
   }
-  console.log("Current score: " + score);
-  console.log(chalk.bold.blue("-------------------"));
+  console.log(chalk.bold.bgBlue.white("Current score: " + score));
+  console.log(chalk.bold.bgBlue.yellow("-+-+-+-+-+-+-+-+-+-"));
 }
 var questions= [{
 question:"Where do I live? ",
@@ -34,7 +34,7 @@ answer: "Ironman"
 }]
 
 for (var i = 0; i<questions.length; i++){
-  play(chalk.bold.redBright(questions[i].question), questions[i].answer);
+  play(chalk.bold.redBright.bgBlue(questions[i].question), questions[i].answer);
 }
 
-console.log("YAY! You scored: "+ score);
+console.log(chalk.bold.bgBlue("YAY! You scored: "+ score));
