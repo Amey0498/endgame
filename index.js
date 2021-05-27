@@ -1,6 +1,7 @@
 var readLineSync = require("readline-sync");
 const chalk = require('chalk');
 const log = console.log;
+
 var score = 0;
 var highScorers = [
   {
@@ -12,7 +13,7 @@ var highScorers = [
     points: 4
   }
                  ];
-var userName = readLineSync.question(chalk.white.bgBlue.bold("What's your name? "));
+var userName = readLineSync.question(chalk.white.bgBlue.bold("What's your name?\n"));
 
 var welcomeMessage = "Welcome " + userName + " to 'Do you know Amey?'";
 
@@ -57,17 +58,17 @@ for (var i = 0; i<questions.length; i++){
   play(chalk.bold.redBright.bgBlue(questions[i].question), questions[i].answer);
 }
 
-log(chalk.bold.bgBlue("YAY! You scored: "+ score));
+log(chalk.bold.bgBlue("YAY! You scored: "+ score + "points"));
 
 highScorers.push({
   name: userName,
   points: score
 })
 
-log("Current Leaderboard");
-log("Name || Points")
-log("_______________")
+log(chalk.bold.bgBlue.green("Current Leaderboard"));
+log(chalk.bold.bgBlue.redBright("Name || Points"));
+log(chalk.bold.bgBlue.whiteBright("--------------"));
 for(let i=0 ; i<highScorers.length; i++){
-  log(highScorers[i].name+" "+highScorers[i].points)
+  log(chalk.bold.bgBlue.greenBright(highScorers[i].name+" "+highScorers[i].points));
 }
-log("_______________")
+log(chalk.bold.bgBlue.whiteBright("--------------"));
