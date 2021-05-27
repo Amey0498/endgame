@@ -58,7 +58,7 @@ for (var i = 0; i<questions.length; i++){
   play(chalk.bold.redBright.bgBlue(questions[i].question), questions[i].answer);
 }
 
-log(chalk.bold.bgBlue("YAY! You scored: "+ score + "points"));
+log(chalk.bold.bgBlue("YAY! You scored: "+ score + " points"));
 
 highScorers.push({
   name: userName,
