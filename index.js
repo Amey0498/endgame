@@ -2,23 +2,23 @@ var readLineSync = require("readline-sync");
 const chalk = require('chalk');
 
 var score = 0;
-var userName = readLineSync.question("What's your name? ");
+var userName = readLineSync.question(chalk.white.bgBlue.bold("What's your name? "));
 
 var welcomeMessage = "Welcome " + userName + " to 'Do you know Amey?'";
 
-console.log(chalk.bgRed.bold(welcomeMessage));
+console.log(chalk.white.bgBlue.bold(welcomeMessage));
 
 //play function
 function play(question, answer){
   var userAnswer = readLineSync.question(question);
-  if(userAnswer === answer){
+  if(userAnswer.toUpperCase() === answer.toUpperCase()){
     console.log("Right");
     score++;
   } else{
     console.log("Wrong");
   }
   console.log("Current score: " + score);
-  console.log("-------------------");
+  console.log(chalk.bold.blue("-------------------"));
 }
 var questions= [{
 question:"Where do I live? ",
@@ -34,7 +34,7 @@ answer: "Ironman"
 }]
 
 for (var i = 0; i<questions.length; i++){
-  play(questions[i].question, questions[i].answer);
+  play(chalk.bold.redBright(questions[i].question), questions[i].answer);
 }
 
 console.log("YAY! You scored: "+ score);
