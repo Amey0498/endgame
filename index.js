@@ -2,7 +2,7 @@ var readLineSync = require("readline-sync");
 const chalk = require('chalk');
 const log = console.log;
 var score = 0;
-var higScorers = [
+var highScorers = [
   {
     name: "Amey",
     points: 5
