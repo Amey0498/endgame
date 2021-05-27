@@ -68,7 +68,5 @@ highScorers.push({
 log(chalk.bold.bgBlue.green("Current Leaderboard"));
 log(chalk.bold.bgBlue.redBright("Name || Points"));
 log(chalk.bold.bgBlue.whiteBright("--------------"));
-for(let i=0 ; i<highScorers.length; i++){
-  log(chalk.bold.bgBlue.greenBright(highScorers[i].name+" "+highScorers[i].points));
-}
+highScorers.map(player => log(chalk.bold.bgBlue.greenBright(player.name + " : " + player.points)))
 log(chalk.bold.bgBlue.whiteBright("--------------"));
